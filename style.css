@@ -249,4 +249,32 @@ button:focus {
   outline: none;
 }
 
+/* Hover translation tooltip */
+.hover-translate {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.tooltip-translation {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1e3a5f;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  font-size: 0.9rem;
+  z-index: 10;
+}
+
+.hover-translate:hover .tooltip-translation {
+  opacity: 1;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@600&display=swap');
