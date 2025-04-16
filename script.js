@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       loadingScreen.style.display = "none";
       mainContent.classList.remove("hidden");
     }, 1000);
-  }, 2000);
+  }, 5000);
 });
 
 function toggleInfo(id) {
