@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to Quebec City</title>
+  <title>Bienvenue à Québec</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
@@ -21,30 +21,42 @@
     <header>
       <nav>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#places">Places</a></li>
-          <li><a href="#activities">Activities</a></li>
-          <li><a href="#food">Food</a></li>
-          <li><a href="#history">History</a></li>
-          <li><a href="#credits">Credits</a></li>
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#places">Lieux</a></li>
+          <li><a href="#activities">Activités</a></li>
+          <li><a href="#food">Aliments</a></li>
+          <li><a href="#history">Histoire</a></li>
+          <li><a href="#credits">Crédits</a></li>
         </ul>
       </nav>
     </header>
 
     <section id="home" class="section">
-      <h2>Welcome to Quebec City</h2>
-      <p>Discover the beauty of Quebec City, rich in culture, history, and great food.</p>
+      <h2 class="hover-translate">
+        Bienvenue à Québec
+        <span class="tooltip-translation">Welcome to Qubec City</span>
+      </h2>
+      <p class="hover-translate">
+        Découvrez la beauté de la ville de Québec, riche en culture, en histoire et en excellente cuisine.
+        <span class="tooltip-translation">Discover the beauty of Quebec City, rich in culture, history, and amazing food.</span>
+      </p>
       <img src="Fairmont Le Château Frontenac.png" alt="Château Frontenac" />
     </section>
 
     <section id="places" class="section">
-      <h2>Places to Visit</h2>
+      <h2 class="hover-translate">
+        Lieux à visiter
+        <span class="tooltip-translation">Places to Visit</span>
+      </h2>
 
       <div class="place">
         <h3>Montmorency Falls</h3>
         <button onclick="toggleInfo('montmorency')">Discover</button>
         <div id="montmorency" class="hidden">
-          <p><strong>Activities:</strong> Hiking, suspension bridge, zip line, ice climbing in winter.</p>
+          <p class="hover-translate"><strong>Activities:</strong> 
+            Randonnée, pont suspendu, tyrolienne, escalade sur glace en hiver.
+            <span class="tooltip-translation">Hiking, suspension bridge, zip lining, ice climbing in winter.</span>
+          </p>
           <p><strong>Dining:</strong> Restaurant with waterfall views.</p>
           <p><strong>History:</strong> 30 meters higher than Niagara Falls!</p>
         </div>
@@ -58,7 +70,7 @@
       </div>
 
       <div class="place">
-        <h3>Old Quebec (Vieux-Québec)</h3>
+        <h3>Old Quebec (Vieux-Québec) - Pictures coming soon</h3>
         <button onclick="toggleInfo('vieux')">Discover</button>
         <div id="vieux" class="hidden">
           <p><strong>Activities:</strong> Walk through cobblestone streets, visit boutiques, enjoy local street art and performers.</p>
@@ -107,7 +119,7 @@
         <li><strong>Café du Monde</strong> - Riverfront seafood dining</li>
         <li><strong>Le Cochon Dingue</strong> - Casual French bistro</li>
       </ul>
-    </section>
+    </section> 
     
     
 
@@ -118,11 +130,11 @@
 
     <section id="credits" class="section">
       <h2>Credits</h2>
-      <p>Site created by Kenny .N</p>
+      <p>Developer: Kenny Nkurunziza - TDS</p>
     </section>
 
     <footer>
-      <p>&copy; 2025 Quebec Explorer</p>
+      <p>&copy; 2025 Quebec Explorer - M.Bonsasa</p>
     </footer>
   </div>
 
