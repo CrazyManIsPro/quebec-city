@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to Quebec City</title>
+  <title>Bienvenue à Québec</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
@@ -21,30 +21,42 @@
     <header>
       <nav>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#places">Places</a></li>
-          <li><a href="#activities">Activities</a></li>
-          <li><a href="#food">Food</a></li>
-          <li><a href="#history">History</a></li>
-          <li><a href="#credits">Credits</a></li>
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#places">Lieux</a></li>
+          <li><a href="#activities">Activités</a></li>
+          <li><a href="#food">Aliments</a></li>
+          <li><a href="#history">Histoire</a></li>
+          <li><a href="#credits">Crédits</a></li>
         </ul>
       </nav>
     </header>
 
     <section id="home" class="section">
-      <h2>Welcome to Quebec City</h2>
-      <p>Discover the beauty of Quebec City, rich in culture, history, and great food.</p>
+      <h2 class="hover-translate">
+        Bienvenue à Québec
+        <span class="tooltip-translation">Welcome to Quebec City</span>
+      </h2>
+      <p class="hover-translate">
+        Découvrez la beauté de la ville de Québec, riche en culture, en histoire et en excellente cuisine.
+        <span class="tooltip-translation">Discover the beauty of Quebec City, rich in culture, history, and amazing food.</span>
+      </p>
       <img src="Fairmont Le Château Frontenac.png" alt="Château Frontenac" />
     </section>
 
     <section id="places" class="section">
-      <h2>Places to Visit</h2>
+      <h2 class="hover-translate">
+        Lieux à visiter
+        <span class="tooltip-translation">Places to Visit</span>
+      </h2>
 
       <div class="place">
         <h3>Montmorency Falls</h3>
         <button onclick="toggleInfo('montmorency')">Discover</button>
         <div id="montmorency" class="hidden">
-          <p><strong>Activities:</strong> Hiking, suspension bridge, zip line, ice climbing in winter.</p>
+          <p class="hover-translate"><strong>Activities:</strong> 
+            Randonnée, pont suspendu, tyrolienne, escalade sur glace en hiver.
+            <span class="tooltip-translation">Hiking, suspension bridge, zip lining, ice climbing in winter.</span>
+          </p>
           <p><strong>Dining:</strong> Restaurant with waterfall views.</p>
           <p><strong>History:</strong> 30 meters higher than Niagara Falls!</p>
         </div>
@@ -58,11 +70,21 @@
       </div>
 
       <div class="place">
-        <h3>Old Quebec (Vieux-Québec)</h3>
+        <h3>Old Quebec (Vieux-Québec) - Pictures coming soon</h3>
         <button onclick="toggleInfo('vieux')">Discover</button>
         <div id="vieux" class="hidden">
-          <p><strong>Activities:</strong> Walk through cobblestone streets, visit boutiques, enjoy local street art and performers.</p>
+          <p>
+            <strong>Activities:</strong> Walk through cobblestone streets, visit boutiques, enjoy local street art and performers.
+            <button class="red-toggle-button" onclick="toggleCarousel('vieux-carousel', this)">Show</button>
+          </p>
           <p><strong>Food:</strong> Local bakeries and French bistros like Le Cochon Dingue.</p>
+          <div id="vieux-carousel" class="image-carousel hidden">
+            <div class="carousel-container">
+              <img id="vieux-carousel-img" src="Cœur de Loup.png" alt="Vieux Quebec Image" />
+              <div class="arrow left-arrow" onclick="prevVieuxImage()">&#10094;</div>
+              <div class="arrow right-arrow" onclick="nextVieuxImage()">&#10095;</div>
+            </div>
+          </div>
           <p><strong>History:</strong> A UNESCO World Heritage Site, home to 400 years of French heritage.</p>
         </div>
       </div>
@@ -71,8 +93,30 @@
         <h3>Plains of Abraham</h3>
         <button onclick="toggleInfo('abraham')">Discover</button>
         <div id="abraham" class="hidden">
-          <p><strong>Activities:</strong> Biking, skiing (winter), historical reenactments.</p>
-          <p><strong>Food:</strong> On-site food trucks and picnic-friendly areas.</p>
+          <div>
+            <p>
+              <strong>Activities:</strong>
+              <span class="hover-translate">
+                Vélo, ski (hiver), reconstitutions historiques.
+                <span class="tooltip-translation">Biking, skiing (winter), historical reenactments.</span>
+              </span>
+              <button class="red-toggle-button" onclick="toggleCarousel('abraham-carousel', this)">Show</button>
+            </p>
+          </div>
+          <div id="abraham-carousel" class="image-carousel hidden">
+            <div class="carousel-container">
+              <img id="abraham-carousel-img" src="biking.png" alt="Plains of Abraham Image" />
+              <div class="arrow left-arrow" onclick="prevAbrahamImage()">&#10094;</div>
+              <div class="arrow right-arrow" onclick="nextAbrahamImage()">&#10095;</div>
+            </div>
+          </div>
+          <p>
+            <strong>Food:</strong>
+            <span class="hover-translate">
+              Des food trucks sur place et des espaces adaptés pour les pique-niques.
+              <span class="tooltip-translation">On-site food trucks and picnic-friendly areas.</span>
+            </span>
+          </p>
           <p><strong>History:</strong> Key battlefield in 1759 during the Seven Years' War.</p>
         </div>
       </div>
@@ -80,8 +124,24 @@
       <div class="place">
         <h3>Observatoire de la Capitale</h3>
         <button onclick="toggleInfo('observatoire')">Discover</button>
+
         <div id="observatoire" class="hidden">
-          <p><strong>Activities:</strong> 360-degree panoramic views of Quebec City, interactive exhibits.</p>
+            <p>
+              <strong>Activities:</strong>
+              <span class="hover-translate">
+                Vues panoramiques à 360 degrés de la ville de Québec, expositions interactives.
+                <span class="tooltip-translation">60-degree panoramic views of Quebec City, interactive exhibits.</span>
+              </span>
+              <button class="red-toggle-button" onclick="toggleCarousel('observatoire-carousel', this)">Show</button>
+            </p>
+            <div id="observatoire-carousel" class="image-carousel hidden">
+              <div class="carousel-container">
+                <img id="observatoire-carousel-img" src="quebec-city-observatory-of-the-capital-entry-ticket.png" alt="Observatoire de la Capitale" />
+                <div class="arrow left-arrow" onclick="prevObservatoireImage()">&#10094;</div>
+                <div class="arrow right-arrow" onclick="nextObservatoireImage()">&#10095;</div>
+              </div>
+            </div>
+
           <p><strong>Food:</strong> Nearby cafes and coffee shops like Café Krieghoff.</p>
           <p><strong>History:</strong> Located at the top of the Marie-Guyart Building.</p>
         </div>
@@ -107,7 +167,7 @@
         <li><strong>Café du Monde</strong> - Riverfront seafood dining</li>
         <li><strong>Le Cochon Dingue</strong> - Casual French bistro</li>
       </ul>
-    </section>
+    </section> 
     
     
 
@@ -118,11 +178,11 @@
 
     <section id="credits" class="section">
       <h2>Credits</h2>
-      <p>Site created by Kenny .N</p>
+      <p>Developer: Kenny Nkurunziza - TDS</p>
     </section>
 
     <footer>
-      <p>&copy; 2025 Quebec Explorer</p>
+      <p>&copy; 2025 Quebec Explorer - M.Bonsasa</p>
     </footer>
   </div>
 
